@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-color: #161722;
+}
+
+.header-img-background {
+  width: 100%;
+  height: 300px;
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.todo-list {
+  width: 540px;
+  height: 615px;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 8px;
+}
+
+.todo-list__heading-row {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-list__heading-row .todo-list__heading {
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  letter-spacing: 14.8px;
+}
+.todo-list__heading-row .todo-list__dark-theme {
+  display: none;
+}
+.todo-list__heading-row .todo-list__light-theme {
+  position: relative;
+  top: 3px;
+  right: -1px;
+}
+
+.todo-list__input {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  height: 65px;
+  background-color: #25273c;
+  border-radius: 5px;
+  padding-right: 15px;
+}
+.todo-list__input input {
+  background-color: #25273c;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  padding-left: 25px;
+  color: #cacde8;
+  border-radius: 5px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.todo-list__input input::placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+.todo-list__input button {
+  background-color: #161722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 30px;
+  font-weight: 700;
+}
+.todo-list__input button:hover {
+  background-color: #3a7bfd;
+}
+
+.todo-list__items {
+  list-style: none;
+  background-color: #25273c;
+  width: 100%;
+  height: auto;
+  margin-top: 23px;
+  border-radius: 5px;
+}
+.todo-list__items .todo-list__item {
+  border-bottom: 1px solid #393a4c;
+  padding: 23.5px 0 23.5px 72px;
+  color: #cacde8;
+  font-size: 17px;
+  overflow: auto;
+  position: relative;
+}
+.todo-list__items .todo-list__item:hover > img {
+  display: block;
+}
+.todo-list__items .todo-list__item:hover {
+  color: #e4e5f1;
+  cursor: pointer;
+}
+.todo-list__items .todo-list__item img {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px 15px 25px;
+  background-color: #25273c;
+  border-radius: 0 0 5px 5px;
+}
+.navigation p {
+  font-size: 14px;
+  color: #4d5066;
+  font-weight: 700;
+}
+.navigation button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #4d5066;
+  font-weight: 700;
+}
+.navigation button:hover {
+  color: #cacde8;
+  cursor: pointer;
+}
+.navigation button.active {
+  color: #3a7bfd;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  height: 28px;
+  width: 28px;
+  background-color: transparent;
+  border: 1px solid #393a4c;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  border: 1px solid #3a7bfd;
+  cursor: pointer;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-image: linear-gradient(#57ddff, #c058f3);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.line-through {
+  text-decoration: line-through;
+  border-bottom: 1px solid #393a4c;
+  padding: 23.5px 0 23.5px 72px;
+  color: #4d5066;
+  font-size: 17px;
+  overflow: auto;
+  position: relative;
+}
+.line-through:hover > img {
+  display: block;
+}
+.line-through img {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,254 @@
+// COLORS
+$primary-color: hsl(220, 98%, 61%);
+$background-gradient: linear-gradient(hsl(192, 100%, 67), hsl(280, 87%, 65%));
+
+// LIGHT THEME COLORS
+$very-light-gray:  hsl(0, 0%, 98%);
+$Very-light-grayish-blue: hsl(236, 33%, 92%);
+$light-grayish-blue: hsl(233, 11%, 84%);
+$dark-grayish-blue: hsl(236, 9%, 61%);
+$very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+// DARK THEME COLORS
+$very-dark-blue: hsl(235, 21%, 11%);
+$very-dark-desaturated-blue: hsl(235, 24%, 19%);
+$light-grayish-blue: hsl(234, 39%, 85%);
+$light-grayish-blue-hover: hsl(236, 33%, 92%);
+$dark-grayish-blue: hsl(234, 11%, 52%);
+$very-dark-grayish-blue1: hsl(233, 14%, 35%);
+$very-dark-grayish-blue2: hsl(237, 14%, 26%);
+
+// FONT
+$main-font: 'Josefin Sans', sans-serif;
+$main-font-size: 18px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: $main-font-size;
+    font-family: $main-font;
+    width: 100%;
+    height: 100vh;
+    background-color: $very-dark-blue;
+}
+.header-img-background {
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/bg-desktop-dark.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.todo-list {
+    width: 540px;
+    height: 615px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 8px;
+}
+
+.todo-list__heading-row {
+    display: flex;
+    justify-content: space-between;
+    .todo-list__heading {
+        color: #fff;
+        font-family: $main-font;
+        font-size: 20px;
+        letter-spacing: 14.8px;
+    }
+    .todo-list__dark-theme {
+        display: none;
+    }
+    .todo-list__light-theme {
+        position: relative;
+        top: 3px;
+        right: -1px;
+    }
+}
+
+.todo-list__input {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    height: 65px;
+    background-color: $very-dark-desaturated-blue;
+    border-radius: 5px;
+    padding-right: 15px;
+    input {
+        background-color: $very-dark-desaturated-blue;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        font-size: $main-font-size;
+        padding-left: 25px;
+        color: $light-grayish-blue;
+        border-radius: 5px;
+        font-family: $main-font;
+        &::placeholder {
+            font-family: $main-font;
+            font-size: $main-font-size;
+        }
+    }
+    button {
+        background-color: $very-dark-blue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        padding: 10px 30px;
+        font-weight: 700;
+        &:hover {
+            background-color: $primary-color;
+        }
+    }
+}
+
+.todo-list__items {
+    list-style: none;
+    background-color: $very-dark-desaturated-blue;
+    width: 100%;
+    height: auto;
+    margin-top: 23px;
+    border-radius: 5px;
+    .todo-list__item {
+        border-bottom: 1px solid $very-dark-grayish-blue2;
+        padding: 23.5px 0 23.5px 72px;
+        color: $light-grayish-blue;
+        font-size: 17px;
+        overflow: auto;
+        position: relative;
+        &:hover > img {
+            display: block;
+        }
+        &:hover {
+            color: $light-grayish-blue-hover;
+            cursor: pointer;
+        }
+        img {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px 15px 25px;
+    background-color: $very-dark-desaturated-blue;
+    border-radius: 0 0 5px 5px;
+    p {
+        font-size: 14px;
+        color: $very-dark-grayish-blue1;
+        font-weight: 700;
+    }
+    
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        color: $very-dark-grayish-blue1;
+        font-weight: 700;
+        &:hover {
+            color: $light-grayish-blue;
+            cursor: pointer;
+        }
+    }
+    button.active {
+        color: $primary-color;
+    }
+}
+
+// CHECKBOX
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    height: 28px;
+    width: 28px;
+    background-color: transparent;
+    border: 1px solid $very-dark-grayish-blue2;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    border: 1px solid $primary-color;
+    cursor: pointer;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-image: $background-gradient;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+.line-through {
+        text-decoration: line-through;
+        border-bottom: 1px solid $very-dark-grayish-blue2;
+        padding: 23.5px 0 23.5px 72px;
+        color: $very-dark-grayish-blue1;
+        font-size: 17px;
+        overflow: auto;
+        position: relative;
+        &:hover > img {
+            display: block;
+        }
+        img {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+}
+
+

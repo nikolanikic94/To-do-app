@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+<body>
+
+  <header class="header-img-background">
+
+  </header>
+  <main class="todo-list">
+
+    <div class="todo-list__heading-row">
+      <div class="todo-list__heading">
+        <h1>TODO</h1>
+      </div>
+      <div class="todo-list__dark-theme">
+        <img src="images/icon-moon.svg" alt="moon">
+      </div>
+      <div class="todo-list__light-theme">
+        <img src="images/icon-sun.svg" alt="sun">
+      </div>
+    </div>
+
+    <form class="todo-list__input" id="TodoForm">
+      <input type="text" id="input-todo" placeholder="Create a new todo..." autocomplete="off">
+      <button type="button" onclick="addTodo()">Add</button>
+    </form>
+
+    <ul class="todo-list__items">
+      <li class="todo-list__item">
+        <label class="container">
+          <input type="checkbox" class="checkbox" onchange="CheckTodo(this)">
+          <span class="checkmark"></span>
+        </label>
+        Complete online Javascript course
+        <img src="images/icon-cross.svg" onclick="deleteBtn(this)" alt="cross">
+      </li>
+      <li class="todo-list__item">
+        <label class="container">
+          <input type="checkbox" onchange="CheckTodo(this)">
+          <span class="checkmark"></span>
+        </label>
+        Jog around the park 3x
+        <img src="images/icon-cross.svg" onclick="deleteBtn(this)" alt="cross">
+      </li>
+      <li class="todo-list__item">
+        <label class="container">
+          <input type="checkbox" onchange="CheckTodo(this)">
+          <span class="checkmark"></span>
+        </label>
+        10 minutes meditation
+        <img src="images/icon-cross.svg" onclick="deleteBtn(this)" alt="cross">
+      </li>
+      <li class="todo-list__item">
+        <label class="container">
+          <input type="checkbox" onchange="CheckTodo(this)">
+          <span class="checkmark"></span>
+        </label>
+        Read for 1 hour
+        <img src="images/icon-cross.svg" onclick="deleteBtn(this)" alt="cross">
+      </li>
+      <li class="todo-list__item">
+        <label class="container">
+          <input type="checkbox" onchange="CheckTodo(this)">
+          <span class="checkmark"></span>
+        </label>
+        Pick up groceries
+        <img src="images/icon-cross.svg" onclick="deleteBtn(this)" alt="cross">
+      </li>
+      <li class="todo-list__item">
+        <label class="container">
+          <input type="checkbox" onchange="CheckTodo(this)">
+          <span class="checkmark"></span>
+        </label>
+        Complete Todo App on Frontend Mentor
+        <img src="images/icon-cross.svg" onclick="deleteBtn(this)" alt="cross">
+      </li>
+    </ul>
+    <div class="navigation">
+      <p><span class="items-left"></span> items left</p>
+      <div>
+        <button type="button" id="all" class="active" onclick="showAll()">all</button>
+        <button type="button" id="active" onclick="showActive()">active</button>
+        <button type="button" id="completed" onclick="showCompleted()">completed</button>
+      </div>
+      <button type="button" onclick="clearCompleted()">Clear Completed</button>
+    </div>
+  </main>
+
+</body>
+<script src="js/script.js"></script>
+</html>
